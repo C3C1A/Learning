@@ -1,0 +1,6 @@
+GTH +5
+NST -2
+PDF +1.5
+NVG +1
+ASD 0
+QWE -3

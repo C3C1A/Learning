@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+	int m,n;
+	int i,j;
+	char a;
+	int b;
+	float sum;
+	int w;
+	scanf("%d%d",&n,&m);
+	for(i = 0;i < m;i ++){
+		sum = 0;
+		w = 0;
+		for(j = 0;j < n;j ++){
+			scanf(" %c%d",&a,&b);
+				sum += (float)(69 - a) * b;
+				w += b;
+		}
+		printf("%.2f\n",sum/w);
+	}
+	
+	return 0;
+}

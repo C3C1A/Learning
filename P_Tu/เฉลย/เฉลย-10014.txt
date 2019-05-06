@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int cmp(const void *a,const void *b){
+	return (*(int *)a - *(int *)b);
+}
+
+int min(int x,int y){
+	if(x < y) return x;
+	return y;
+}
+
+int main(){
+	int Q,nC,nA;
+	int C[20],A[100001];
+	int i,j,k;
+	int temp;
+	
+	
+		scanf("%d%d",&nC,&nA);
+		for(j = 0;j < 100001;j ++) A[j] = 999999;
+		for(j = 0;j < nC;j ++){
+			scanf("%d",&C[j]);
+			A[C[j]] = 1;
+		}
+		qsort(C,nC,sizeof(int),cmp);
+		for(j = C[0];j < 100001;j ++){
+			for(k = 0;k < nC && C[k] <= j ;k ++){
+				A[j] = min(1 + A[j - C[k]], A[j]);
+			}
+		}
+		
+		for(j = 0;j < nA;j ++){
+			scanf("%d",&temp);
+			if(A[temp] != 999999)
+			printf("%d ",A[temp]);
+			else
+			printf("0 ");
+		}
+		
+	
+	
+	
+	
+	return 0;
+}
